@@ -1,0 +1,6 @@
+version: "3.7"
+services:
+  plantuml:
+    image: plantuml/plantuml-server:latest
+    ports:
+      - 8080:8080
