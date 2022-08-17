@@ -33,3 +33,8 @@ sequenceDiagram
   Browser ->> S3: 切り取りファイル取得
   Browser ->> Browser: 切り取りファイル再生
 ```
+
+## 要検討
+
+- S3 へのアクセスは、Browser から直接ではなく API を経由した方が単純かもしれない
+- ユーザ管理は、初期スコープに入れるか？
