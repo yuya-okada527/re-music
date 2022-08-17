@@ -13,7 +13,8 @@ sequenceDiagram
   participant Lambda
 
   # 切り取り要求
-  Browser ->> S3: 音声アップロード
+  Browser ->> API: 音声ファイルアップロード
+  API ->> S3: 音声ファイル保存
   Browser ->>+ API: 切り取り要求送信
   Note left of API: S3パス、切り取り位置
   API ->> RDB: ステータス登録
@@ -30,7 +31,8 @@ sequenceDiagram
 
   # 切り取りファイル再生
   Browser ->> API: ステータス参照
-  Browser ->> S3: 切り取りファイル取得
+  Browser ->> API: 切り取りファイル取得
+  API ->> S3: 切り取りファイル取得
   Browser ->> Browser: 切り取りファイル再生
 ```
 
@@ -39,4 +41,5 @@ sequenceDiagram
 - S3 へのアクセスは、Browser から直接ではなく API を経由した方が単純かもしれない
   - 将来的に、モバイルアプリとかを考えると API 側に諸々寄せておいた方が都合が良さそう
   - ただ、大きな静的ファイルをサーバ内で処理するのは、負荷的な面で心配
+    - 初期スコープでは、API を経由する方に寄せる
 - ユーザ管理は、初期スコープに入れるか？
