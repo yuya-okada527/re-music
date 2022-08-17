@@ -23,6 +23,9 @@ WEB ベースで、音声の録音と編集、再生を実施する。
   - サーバサイドでなんとかする
     - JS
       - https://www.petitmonte.com/javascript/wave_cut.html
+      - https://github.com/lubenard/simple-mp3-cutter
+    - Python
+      - https://algorithm.joho.info/programming/python/pydub-split/
 
 ### 構成
 
