@@ -13,9 +13,9 @@ sequenceDiagram
   participant Lambda
 
   # 切り取り要求
-  Browser ->> API: 音声ファイルアップロード
+  Browser ->> API: 音声ファイルアップロード(練習曲作成 API)
   API ->> S3: 音声ファイル保存
-  Browser ->>+ API: 切り取り要求送信
+  Browser ->>+ API: 切り取り要求送信(音声フレーズ作成 API)
   Note left of API: S3パス、切り取り位置
   API ->> RDB: ステータス登録
   API ->> SQS: 切り取り要求をキューイング
@@ -26,12 +26,12 @@ sequenceDiagram
   Lambda ->> S3: 音声ファイル取得
   Lambda ->> Lambda: 切り取り実行
   Lambda ->> S3: 切り取り済み音声ファイル保存
-  Lambda ->> API: ステータス更新をリクエスト
+  Lambda ->> API: ステータス更新をリクエスト(音声フレーズ作成ステータス更新 API)
   API ->> RDB: ステータス更新
 
   # 切り取りファイル再生
-  Browser ->> API: ステータス参照
-  Browser ->> API: 切り取りファイル取得
+  Browser ->> API: ステータス参照(音声フレーズ作成ステータス取得 API)
+  Browser ->> API: 切り取りファイル取得(音声フレーズ取得 API)
   API ->> S3: 切り取りファイル取得
   Browser ->> Browser: 切り取りファイル再生
 ```
