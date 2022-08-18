@@ -15,10 +15,10 @@
   - GET /v1/songs/{song_id}/phrases/{phrase_id}
   - 音声フレーズを取得する
 - 音声フレーズ作成ステータス取得 API
-  - GET /v1/songs/{song_id}/phrases/{phrase_id}/status
+  - GET /v1/songs/{song_id}/phrases/{phrase_id}/states
   - 音声フレーズ作成ステータスを取得する
 - 音声フレーズ作成ステータス更新 API
-  - PUT /v1/songs/{song_id}/phrases/{phrase_id}/status
+  - PUT /v1/songs/{song_id}/phrases/{phrase_id}/states
   - 音声フレーズ作成ステータスを更新する
 
 ## API 詳細
@@ -46,5 +46,39 @@ name: song_name
   "name": "phrase_name",
   "start": 123,
   "end": 321
+}
+```
+
+### 音声フレーズ取得 API
+
+- Path: /v1/songs/{song_id}/phrases/{phrase_id}
+- Method: GET
+- response: 音声ファイル
+
+### 音声フレーズ作成ステータス取得 API
+
+- Path: /v1/songs/{song_id}/phrases/{phrase_id}/states
+- Method: GET
+- response
+
+```
+{
+  "id": 1,
+  "phrase_id": 2,
+  "state": "作成失敗",
+  "error_reason": "hoge"
+}
+```
+
+### 音声フレーズ作成ステータス更新 API
+
+- Path: /v1/songs/{song_id}/phrases/{phrase_id}/states
+- Method: PUT
+- request:
+
+```
+{
+  "state": "完了",
+  "error_reason": ""
 }
 ```
