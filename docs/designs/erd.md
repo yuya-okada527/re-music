@@ -25,6 +25,8 @@ phrases {
   int id PK
   int song_id FK
   string name
+  int start
+  int end
 }
 
 phrase_sounds {

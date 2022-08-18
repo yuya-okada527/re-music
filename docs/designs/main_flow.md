@@ -16,7 +16,7 @@ sequenceDiagram
   Browser ->> API: 音声ファイルアップロード(練習曲作成 API)
   API ->> S3: 音声ファイル保存
   Browser ->>+ API: 切り取り要求送信(音声フレーズ作成 API)
-  Note left of API: S3パス、切り取り位置
+  Note left of API: 切り取り位置
   API ->> RDB: ステータス登録
   API ->> SQS: 切り取り要求をキューイング
   API ->>- Browser: レスポンス

@@ -20,3 +20,31 @@
 - 音声フレーズ作成ステータス更新 API
   - PUT /v1/songs/{song_id}/phrases/{phrase_id}/status
   - 音声フレーズ作成ステータスを更新する
+
+## API 詳細
+
+### 練習曲作成 API
+
+- Path: /v1/songs
+- Method: POST
+- Content-Type: multipart/form-data
+- form-data:
+
+```
+data: xxx
+name: song_name
+```
+
+### 音声フレーズ作成 API
+
+- Path: /v1/songs/{song_id}/phrases
+- Content-Type: application/json
+- data:
+
+```
+{
+  "name": "phrase_name",
+  "start": 123,
+  "end": 321
+}
+```
