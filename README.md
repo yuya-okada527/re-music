@@ -5,3 +5,7 @@
 ## プロジェクト管理
 
 https://github.com/users/yuya-okada527/projects/3
+
+## 構成図
+
+![構成図](docs/designs/structure.drawio.svg)
